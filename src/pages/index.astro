@@ -3,6 +3,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Peter Ebraheem</title>
+    <!-- Imports the Montserrat font from Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- Fading Sticky Menu Bar -->
@@ -18,7 +20,8 @@
     
     <section class="hero-container">
       <!-- Background Image -->
-      <img src="/images/hero-bg.png" alt="Peter Ebraheem" class="hero-bg" />
+      <!-- Make sure the filename exactly matches what is in your public/images folder -->
+      <img src="/images/hero-bg-v2.png" alt="Peter Ebraheem" class="hero-bg" />
       
       <!-- Dark Overlay to make text readable -->
       <div class="hero-overlay"></div>
@@ -81,11 +84,14 @@
     text-align: center;
     color: white;
     padding: 20px;
+    margin-top: 15vh; /* Pushes the text block down. Adjust this value (e.g., 10vh or 20vh) if needed */
   }
 
   /* Styling for your name */
   .hero-title {
-    font-size: 4rem;
+    font-family: 'Montserrat', sans-serif; /* Applies your new custom font */
+    font-size: 4.5rem; 
+    letter-spacing: -1px; 
     margin-bottom: 10px;
     margin-top: 0;
   }
