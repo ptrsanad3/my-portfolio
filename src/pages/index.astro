@@ -3,8 +3,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Peter Ebraheem</title>
-    <!-- Imports the Montserrat font from Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Imports the ultra-thin Josefin Sans font from Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- Fading Sticky Menu Bar -->
@@ -20,8 +20,8 @@
     
     <section class="hero-container">
       <!-- Background Image -->
-      <!-- Make sure the filename exactly matches what is in your public/images folder -->
-      <img src="/images/hero-bg-v2.png" alt="Peter Ebraheem" class="hero-bg" />
+      <!-- MAKE SURE THIS MATCHES YOUR EXACT FILE NAME IN THE IMAGES FOLDER -->
+      <img src="/images/hero-bg.png" alt="Peter Ebraheem" class="hero-bg" />
       
       <!-- Dark Overlay to make text readable -->
       <div class="hero-overlay"></div>
@@ -36,25 +36,25 @@
 </html>
 
 <style>
-  /* Removes default borders so the image touches the edges of the screen */
+  /* Removes default borders */
   body, html {
     margin: 0;
     padding: 0;
     font-family: system-ui, -apple-system, sans-serif;
   }
 
-  /* The main wrapper controlling the size */
+  /* The main wrapper */
   .hero-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 3 / 2; /* Forces the container to perfectly match your image */
+    aspect-ratio: 3 / 2; 
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
   }
 
-  /* Puts the image in the background */
+  /* The background image */
   .hero-bg {
     position: absolute;
     top: 0;
@@ -62,7 +62,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover; 
-    object-position: top center; /* Forces the image to start from its absolute top edge */
+    object-position: top center; 
     z-index: 1;
   }
 
@@ -73,24 +73,25 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* The 0.4 is 40% opacity. Change it to adjust darkness */
+    background-color: rgba(0, 0, 0, 0.4); 
     z-index: 2;
   }
 
-  /* Puts the text over the image and centers it */
+  /* The text container */
   .hero-content {
     position: relative;
     z-index: 3; 
     text-align: center;
     color: white;
     padding: 20px;
-    margin-top: 15vh; /* Pushes the text block down. Adjust this value (e.g., 10vh or 20vh) if needed */
+    margin-top: 15vh; 
   }
 
-  /* Styling for your name */
+  /* Styling for your name with the new thin font */
   .hero-title {
-    font-family: 'Montserrat', sans-serif; /* Applies your new custom font */
-    font-size: 4.5rem; 
+    font-family: 'Josefin Sans', sans-serif; 
+    font-weight: 300; /* This makes the font thin and elegant */
+    font-size: 5rem; 
     letter-spacing: -1px; 
     margin-bottom: 10px;
     margin-top: 0;
@@ -109,28 +110,25 @@
     top: 0;
     left: 0;
     width: 100%;
-    box-sizing: border-box; /* Keeps the menu exactly within the screen width */
-    
-    /* Solid black for the first 75%, then a quick fade at the bottom 25% */
+    box-sizing: border-box; 
     background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
-    
     padding: 25px 40px 50px 40px; 
-    z-index: 100; /* Ensures the menu always stays on top of your images */
+    z-index: 100; 
     display: flex;
-    justify-content: flex-end; /* Aligns the menu items to the right side */
+    justify-content: flex-end; 
   }
 
-  /* Styling the individual links */
+  /* Menu links */
   .nav-links a {
     color: white;
     text-decoration: none;
-    margin-left: 35px; /* Spacing between the links */
+    margin-left: 35px; 
     font-size: 1.1rem;
     font-weight: 400;
-    transition: opacity 0.3s ease; /* Makes the hover effect smooth */
+    transition: opacity 0.3s ease; 
   }
 
-  /* Gentle fade effect when someone hovers their mouse over a link */
+  /* Hover effect */
   .nav-links a:hover {
     opacity: 0.6; 
   }
