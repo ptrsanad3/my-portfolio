@@ -15,9 +15,9 @@
         <a href="#contact">Contact</a>
       </div>
     </header>
-	<section class="hero-container">
+    
+    <section class="hero-container">
       <!-- Background Image -->
-      <!-- Make sure this matches your exact file name (.png or .jpg) -->
       <img src="/images/hero-bg.png" alt="Peter Ebraheem" class="hero-bg" />
       
       <!-- Dark Overlay to make text readable -->
@@ -44,7 +44,7 @@
   .hero-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 3 / 2; /* <--- This forces the container to perfectly match your image */
+    aspect-ratio: 3 / 2; /* Forces the container to perfectly match your image */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,7 +58,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Since the container is now exactly 3:2, no cropping will happen! */
+    object-fit: cover; 
+    object-position: top center; /* Forces the image to start from its absolute top edge */
     z-index: 1;
   }
 
@@ -95,18 +96,19 @@
     font-weight: 300;
     color: #e5e7eb; 
   }
+
   /* The fixed gradient menu bar */
   .top-nav {
-    position: fixed; /* Keeps it locked to the top when scrolling */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
+    box-sizing: border-box; /* Keeps the menu exactly within the screen width */
     
-    /* The magic fade: Solid black at the very top (0%), fading to completely transparent at the bottom (100%) */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    /* Solid black for the first 75%, then a quick fade at the bottom 25% */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
     
-    /* Extra padding at the bottom so the fade drops nicely below the text */
-    padding: 30px 40px 50px 40px; 
+    padding: 25px 40px 50px 40px; 
     z-index: 100; /* Ensures the menu always stays on top of your images */
     display: flex;
     justify-content: flex-end; /* Aligns the menu items to the right side */
