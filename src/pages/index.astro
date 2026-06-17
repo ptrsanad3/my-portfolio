@@ -1,35 +1,88 @@
----
-import '../styles/global.css';
----
-
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Peter Ebraheem | Portfolio</title>
-	</head>
-	<body class="bg-zinc-950 text-white font-sans antialiased">
-		
-		<!-- NAVIGATION BAR -->
-		<nav class="flex justify-between items-center py-8 px-8 md:px-16 border-b border-zinc-900">
-			<div class="text-xl font-bold tracking-widest uppercase">
-				Peter Ebraheem
-			</div>
-			<div class="space-x-8 text-sm font-medium text-zinc-400">
-				<a href="#" class="hover:text-white transition-colors">Audio</a>
-				<a href="#" class="hover:text-white transition-colors">Visuals</a>
-				<a href="#" class="hover:text-white transition-colors">Engineering</a>
-			</div>
-		</nav>
-
-        <!-- HERO SECTION -->
-        <main class="flex flex-col items-center justify-center min-h-[75vh] text-center px-6">
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">Sound, Cinema & Systems.</h1>
-            <p class="text-lg text-zinc-400 max-w-2xl leading-relaxed">
-                Specializing in rhythmically dense production, analog console mixing, and high-fidelity cinematography.
-            </p>
-        </main>
-
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Peter Ebraheem</title>
+  </head>
+  <body>
+    <section class="hero-container">
+      <!-- Background Image -->
+      <!-- Make sure this matches your exact file name (.png or .jpg) -->
+      <img src="/images/hero-bg.png" alt="Peter Ebraheem" class="hero-bg" />
+      
+      <!-- Dark Overlay to make text readable -->
+      <div class="hero-overlay"></div>
+      
+      <!-- Typography -->
+      <div class="hero-content">
+        <h1 class="hero-title">Peter Ebraheem</h1>
+        <h2 class="hero-subtitle">Music Producer, Director, & Educator</h2>
+      </div>
+    </section>
+  </body>
 </html>
+
+<style>
+  /* Removes default borders so the image touches the edges of the screen */
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  /* The main wrapper controlling the size */
+  .hero-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2; /* <--- This forces the container to perfectly match your image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* Puts the image in the background */
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Since the container is now exactly 3:2, no cropping will happen! */
+    z-index: 1;
+  }
+
+  /* The dark tint */
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* The 0.4 is 40% opacity. Change it to adjust darkness */
+    z-index: 2;
+  }
+
+  /* Puts the text over the image and centers it */
+  .hero-content {
+    position: relative;
+    z-index: 3; 
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
+
+  /* Styling for your name */
+  .hero-title {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  /* Styling for your titles */
+  .hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #e5e7eb; 
+  }
+</style>
