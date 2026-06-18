@@ -132,4 +132,46 @@
   .nav-links a:hover {
     opacity: 0.6; 
   }
+  /* --- MOBILE RESPONSIVENESS --- */
+  @media (max-width: 768px) {
+    /* 1. Make the container tall enough to fit the image and text */
+    .hero-container {
+      aspect-ratio: auto; /* Turns off the strict 3:2 ratio on phones */
+      min-height: 85vh; /* Makes the image take up 85% of the phone screen height */
+    }
+
+    /* 2. Pull the text block up so it isn't pushed off the bottom */
+    .hero-content {
+      margin-top: 10vh; 
+      padding: 10px;
+    }
+
+    /* 3. Shrink the massive fonts to fit the screen */
+    .hero-title {
+      font-size: 3rem; 
+      letter-spacing: 0px;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    /* 4. Center and wrap the menu links so they don't squish */
+    .top-nav {
+      padding: 15px 10px 30px 10px;
+      justify-content: center; 
+    }
+    
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap; /* Allows links to stack cleanly into two rows if needed */
+      justify-content: center;
+      gap: 15px; /* Adds even space between all links */
+    }
+    
+    .nav-links a {
+      margin-left: 0; /* Overrides the desktop left-margin */
+      font-size: 0.85rem; 
+    }
+  }
 </style>
