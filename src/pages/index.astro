@@ -18,9 +18,9 @@
       </div>
     </header>
     
-    <section class="hero-container">
+    <!-- HERO SECTION -->
+    <section class="hero-container" id="home">
       <!-- Background Image -->
-      <!-- MAKE SURE THIS MATCHES YOUR EXACT FILE NAME IN THE IMAGES FOLDER -->
       <img src="/images/hero-bg.png" alt="Peter Ebraheem" class="hero-bg" />
       
       <!-- Dark Overlay to make text readable -->
@@ -32,6 +32,35 @@
         <h2 class="hero-subtitle">Music Producer, Director, & Educator</h2>
       </div>
     </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+      <div class="about-card">
+        
+        <!-- Left Side: Portrait Image -->
+        <div class="about-image-wrapper">
+          <img src="/images/about-portrait.png" alt="Peter Ebraheem Portrait" class="about-image" />
+        </div>
+
+        <!-- Right Side: Content -->
+        <div class="about-content">
+          <p class="about-eyebrow">The Philosophy</p>
+          <h2 class="about-heading">About Me</h2>
+          
+          <div class="about-text">
+            <p>
+              With a dual major in Music Production & Engineering and Contemporary Writing & Production at Berklee College of Music, alongside a foundational degree in Electrical Engineering, I bridge the gap between deep technical precision and expressive musicality.
+            </p>
+            <p>
+              Whether I am optimizing analog signal flows through Neve consoles, charting complex brass arrangements in Dorico, or leading an ensemble, my approach is rooted in delivering high-fidelity, emotionally resonant audio. 
+            </p>
+          </div>
+
+          <a href="#contact" class="about-btn">GET IN TOUCH</a>
+        </div>
+        
+      </div>
+    </section>
   </body>
 </html>
 
@@ -41,8 +70,10 @@
     margin: 0;
     padding: 0;
     font-family: system-ui, -apple-system, sans-serif;
+    background-color: #050505; /* Keeps the whole page background dark behind everything */
   }
 
+  /* --- HERO SECTION --- */
   /* The main wrapper */
   .hero-container {
     position: relative;
@@ -90,7 +121,7 @@
   /* Styling for your name with the new thin font */
   .hero-title {
     font-family: 'Josefin Sans', sans-serif; 
-    font-weight: 300; /* This makes the font thin and elegant */
+    font-weight: 300; 
     font-size: 5rem; 
     letter-spacing: -1px; 
     margin-bottom: 10px;
@@ -104,6 +135,7 @@
     color: #e5e7eb; 
   }
 
+  /* --- MENU BAR --- */
   /* The fixed gradient menu bar */
   .top-nav {
     position: fixed; 
@@ -132,12 +164,99 @@
   .nav-links a:hover {
     opacity: 0.6; 
   }
+
+  /* --- ABOUT SECTION --- */
+  .about-section {
+    background-color: #050505; 
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* The main card container */
+  .about-card {
+    display: flex;
+    background-color: #1a1a1a; 
+    border-radius: 8px; 
+    max-width: 1000px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+
+  /* Left Side: The Image */
+  .about-image-wrapper {
+    flex: 1; 
+    min-height: 400px;
+  }
+
+  .about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Right Side: The Text */
+  .about-content {
+    flex: 1.2; 
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-eyebrow {
+    color: #c9a071; 
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+  }
+
+  .about-heading {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  .about-text p {
+    color: #a3a3a3; 
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  /* The Button */
+  .about-btn {
+    display: inline-block;
+    align-self: flex-start; 
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #c9a071;
+    color: #000;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .about-btn:hover {
+    background-color: #e0b480;
+  }
+
   /* --- MOBILE RESPONSIVENESS --- */
   @media (max-width: 768px) {
     /* 1. Make the container tall enough to fit the image and text */
     .hero-container {
-      aspect-ratio: auto; /* Turns off the strict 3:2 ratio on phones */
-      min-height: 85vh; /* Makes the image take up 85% of the phone screen height */
+      aspect-ratio: auto; 
+      min-height: 85vh; 
     }
 
     /* 2. Pull the text block up so it isn't pushed off the bottom */
@@ -164,14 +283,27 @@
     
     .nav-links {
       display: flex;
-      flex-wrap: wrap; /* Allows links to stack cleanly into two rows if needed */
+      flex-wrap: wrap; 
       justify-content: center;
-      gap: 15px; /* Adds even space between all links */
+      gap: 15px; 
     }
     
     .nav-links a {
-      margin-left: 0; /* Overrides the desktop left-margin */
+      margin-left: 0; 
       font-size: 0.85rem; 
+    }
+
+    /* 5. Mobile rules for the About Section */
+    .about-card {
+      flex-direction: column; /* Stacks the image on top of the text */
+    }
+    
+    .about-image-wrapper {
+      min-height: 300px; /* Makes the image a bit shorter on phones */
+    }
+    
+    .about-content {
+      padding: 40px 20px; /* Reduces the padding so it fits nicely */
     }
   }
 </style>
