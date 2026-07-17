@@ -1,0 +1,309 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Peter Ebraheem</title>
+    <!-- Imports the ultra-thin Josefin Sans font from Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Fading Sticky Menu Bar -->
+    <header class="top-nav">
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#production">Production & Engineering</a>
+        <a href="#arrangements">Arrangements</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </header>
+    
+    <!-- HERO SECTION -->
+    <section class="hero-container" id="home">
+      <!-- Background Image -->
+      <img src="/images/hero-bg.png" alt="Peter Ebraheem" class="hero-bg" />
+      
+      <!-- Dark Overlay to make text readable -->
+      <div class="hero-overlay"></div>
+      
+      <!-- Typography -->
+      <div class="hero-content">
+        <h1 class="hero-title">Peter Ebraheem</h1>
+        <h2 class="hero-subtitle">Music Producer, Director, & Educator</h2>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+      <div class="about-card">
+        
+        <!-- Left Side: Portrait Image -->
+        <div class="about-image-wrapper">
+          <img src="/images/peter-about.jpeg" alt="Peter Ebraheem Portrait" class="about-image" />
+        </div>
+
+        <!-- Right Side: Content -->
+        <div class="about-content">
+          <p class="about-eyebrow">The Philosophy</p>
+          <h2 class="about-heading">About Me</h2>
+          
+          <div class="about-text">
+            <p>
+              I've been working in the music industry for over a decade, producing tracks across a wide variety of genres. Currently, I'm at Berklee College of Music pursuing a dual major in Music Production & Engineering and Contemporary Writing & Production.
+            </p>
+            <p>
+              For me, making music is about seeing the whole picture. While I love being behind the board producing and engineering, I also have a lot of experience directing and arranging for ensembles in both live and studio settings. Whether I'm building a track from scratch, mixing a record, or leading a band, my goal is simply to help bring great music to life.
+            </p>
+          </div>
+
+          <a href="#contact" class="about-btn">GET IN TOUCH</a>
+        </div>
+        
+      </div>
+    </section>
+  </body>
+</html>
+
+<style>
+  /* Removes default borders */
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #050505; /* Keeps the whole page background dark behind everything */
+  }
+
+  /* --- HERO SECTION --- */
+  /* The main wrapper */
+  .hero-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* The background image */
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: top center; 
+    z-index: 1;
+  }
+
+  /* The dark tint */
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); 
+    z-index: 2;
+  }
+
+  /* The text container */
+  .hero-content {
+    position: relative;
+    z-index: 3; 
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-top: 29vh; 
+  }
+
+  /* Styling for your name with the new thin font */
+  .hero-title {
+    font-family: 'Josefin Sans', sans-serif; 
+    font-weight: 300; 
+    font-size: 5rem; 
+    letter-spacing: -1px; 
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  /* Styling for your titles */
+  .hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #e5e7eb; 
+  }
+
+  /* --- MENU BAR --- */
+  /* The fixed gradient menu bar */
+  .top-nav {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box; 
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+    padding: 25px 40px 50px 40px; 
+    z-index: 100; 
+    display: flex;
+    justify-content: flex-end; 
+  }
+
+  /* Menu links */
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 35px; 
+    font-size: 1.1rem;
+    font-weight: 400;
+    transition: opacity 0.3s ease; 
+  }
+
+  /* Hover effect */
+  .nav-links a:hover {
+    opacity: 0.6; 
+  }
+
+  /* --- ABOUT SECTION --- */
+  .about-section {
+    background-color: #050505; 
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* The main card container */
+  .about-card {
+    display: flex;
+    background-color: #1a1a1a; 
+    border-radius: 8px; 
+    max-width: 1000px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+
+  /* Left Side: The Image */
+  .about-image-wrapper {
+    flex: 1; 
+    min-height: 400px;
+  }
+
+  .about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Right Side: The Text */
+  .about-content {
+    flex: 1.2; 
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-eyebrow {
+    color: #c9a071; 
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+  }
+
+  .about-heading {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  .about-text p {
+    color: #a3a3a3; 
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  /* The Button */
+  .about-btn {
+    display: inline-block;
+    align-self: flex-start; 
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #c9a071;
+    color: #000;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .about-btn:hover {
+    background-color: #e0b480;
+  }
+
+  /* --- MOBILE RESPONSIVENESS --- */
+  @media (max-width: 768px) {
+    /* 1. Make the container tall enough to fit the image and text */
+    .hero-container {
+      aspect-ratio: auto; 
+      min-height: 85vh; 
+    }
+
+    /* 2. Pull the text block up so it isn't pushed off the bottom */
+    .hero-content {
+      margin-top: 10vh; 
+      padding: 10px;
+    }
+
+    /* 3. Shrink the massive fonts to fit the screen */
+    .hero-title {
+      font-size: 3rem; 
+      letter-spacing: 0px;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    /* 4. Center and wrap the menu links so they don't squish */
+    .top-nav {
+      padding: 15px 10px 30px 10px;
+      justify-content: center; 
+    }
+    
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: center;
+      gap: 15px; 
+    }
+    
+    .nav-links a {
+      margin-left: 0; 
+      font-size: 0.85rem; 
+    }
+
+    /* 5. Mobile rules for the About Section */
+    .about-card {
+      flex-direction: column; /* Stacks the image on top of the text */
+    }
+    
+    .about-image-wrapper {
+      min-height: 300px; /* Makes the image a bit shorter on phones */
+    }
+    
+    .about-content {
+      padding: 40px 20px; /* Reduces the padding so it fits nicely */
+    }
+  }
+</style>
