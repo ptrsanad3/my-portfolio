@@ -5,58 +5,128 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width" />
     <title>Peter Ebraheem | Under Construction</title>
-    <style>
-      body {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        background-color: #fafafa;
-        color: #1a1a1a;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        text-align: center;
-        padding: 2rem;
-      }
-      
-      h1 {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        margin: 0 0 0.5rem 0;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        text-transform: uppercase;
-      }
-
-      h2 {
-        font-size: clamp(1rem, 2vw, 1.5rem);
-        font-weight: 300;
-        margin: 0 0 3rem 0;
-        color: #555;
-        letter-spacing: 0.05em;
-      }
-
-      .construction-badge {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        background-color: #1a1a1a;
-        color: #ffffff;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-size: 0.85rem;
-        font-weight: 500;
-        border-radius: 4px;
-      }
-    </style>
+    <!-- Imports the ultra-thin Josefin Sans font from Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Peter Ebraheem</h1>
-    <h2>Music Producer, Director, Educator</h2>
-    
-    <div class="construction-badge">
-      Under Construction
-    </div>
+    <!-- HERO SECTION (Under Construction Landing Page) -->
+    <section class="hero-container" id="home">
+      <!-- Background Image -->
+      <img src="/images/hero-bg.png" alt="Peter Ebraheem" class="hero-bg" />
+      
+      <!-- Dark Overlay to make text readable -->
+      <div class="hero-overlay"></div>
+      
+      <!-- Typography -->
+      <div class="hero-content">
+        <h1 class="hero-title">Peter Ebraheem</h1>
+        <h2 class="hero-subtitle">Music Producer, Director, & Educator</h2>
+        
+        <div class="construction-badge">
+          Under Construction
+        </div>
+      </div>
+    </section>
   </body>
 </html>
+
+<style>
+  /* Removes default borders */
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #050505; 
+  }
+
+  /* --- HERO SECTION --- */
+  /* The main wrapper */
+  .hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Fills the entire screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* The background image */
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: top center; 
+    z-index: 1;
+  }
+
+  /* The dark tint */
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); 
+    z-index: 2;
+  }
+
+  /* The text container */
+  .hero-content {
+    position: relative;
+    z-index: 3; 
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
+
+  /* Styling for your name */
+  .hero-title {
+    font-family: 'Josefin Sans', sans-serif; 
+    font-weight: 300; 
+    font-size: 5rem; 
+    letter-spacing: -1px; 
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  /* Styling for your titles */
+  .hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #e5e7eb; 
+    margin-bottom: 2rem;
+  }
+
+  /* Under Construction Badge */
+  .construction-badge {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #c9a071; /* Matches your brand color */
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  }
+
+  /* --- MOBILE RESPONSIVENESS --- */
+  @media (max-width: 768px) {
+    /* Shrink the massive fonts to fit the screen */
+    .hero-title {
+      font-size: 3rem; 
+      letter-spacing: 0px;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+</style>
