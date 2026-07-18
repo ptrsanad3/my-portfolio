@@ -83,6 +83,7 @@
     text-align: center;
     color: white;
     padding: 20px;
+    margin-top: 29vh; /* Pushes the text down below your neck */
   }
 
   /* Styling for your name */
@@ -119,6 +120,11 @@
 
   /* --- MOBILE RESPONSIVENESS --- */
   @media (max-width: 768px) {
+    /* Pull the text back up a bit on smaller phone screens */
+    .hero-content {
+      margin-top: 10vh; 
+    }
+
     /* Shrink the massive fonts to fit the screen */
     .hero-title {
       font-size: 3rem; 
